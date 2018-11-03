@@ -1,0 +1,13 @@
+<p>
+  employee works!
+</p>
+
+<input [(ngModel)]="employee.employee" /><button (click)="btnAddEmployee()">Add</button>    <!-- Add -->
+
+<ul> 
+  <li *ngFor="let employee of employees">
+    <button (click)="btnEditEmployee(employee.id)">Edit</button>
+    <button (click)="btnDeleteEmployee(employee.id)">Delete</button>
+    <span class="badge">{{employee.id}}</span> {{employee.employee}}
+  </li>
+</ul>

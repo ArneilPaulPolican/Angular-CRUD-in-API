@@ -22,6 +22,7 @@
     "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
+    "wijmo": "http://prerelease.componentone.com/wijmo5/npm-images/C1Wijmo-Enterprise-Eval-AMD-5.20172.328.tgz",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
