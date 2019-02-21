@@ -371,3 +371,6 @@
   .nav-pills > li > a.active {
       background-color: #7c7c7c !important;
   }
+  /* modifeid */
+  @import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";

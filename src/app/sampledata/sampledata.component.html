@@ -1,12 +1,16 @@
 <p>
   sampledata works!
 </p>
+{{title}}
+<br>
 
-<!-- 
 <ul> 
-  <li *ngFor="let sample of sampledata">
+  <li *ngFor="let sample of fgdSampleData">
     <button (click)="btnEditEmployee(employee.id)">Edit</button>
     <button (click)="btnDeleteEmployee(employee.id)">Delete</button>
-    <span class="badge">{{sampledata.id}}</span> {{sampledata.employee}}
+    <span class="badge">{{sample.id}}</span> {{sample.description}}
   </li>
-</ul> -->
+</ul>
+
+
+<button (click)="cmdSecondPage">page 2</button>

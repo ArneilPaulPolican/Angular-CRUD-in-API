@@ -15,19 +15,23 @@ import { SampledataComponent } from './sampledata/sampledata.component'
 import { SampleService } from './sample.service';
  
 import { HttpModule } from '@angular/http';
+import { Page2Component } from './page2/page2.component';
+import { UiModule } from './ui/ui.module';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     EmployeeDetailComponent,
     DashboardComponent,
-    SampledataComponent
+    SampledataComponent,
+    Page2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    UiModule
   ],
   providers: [
     EmployeeService,

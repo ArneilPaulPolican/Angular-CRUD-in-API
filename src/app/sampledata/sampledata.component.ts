@@ -13,18 +13,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./sampledata.component.css']
 })
 export class SampledataComponent implements OnInit {
-
-  private sampleSub : any;
-  public SampleList: SampleData = 
-  { 
-    id: 0, 
-    description: "", 
-    remarks:""
-  };  
+  title = "Tour of Heroes";
+  private sampleSub: any;
+  public SampleList: SampleData =
+    {
+      id: 0,
+      description: "",
+      remarks: ""
+    };
   public samples: SampleData[];
 
-  public fgdSampleData : ObservableArray;
-  public fgdSampleCollection : CollectionView;
+  public fgdSampleData: ObservableArray;
+  public fgdSampleCollection: CollectionView;
 
   constructor(
     private sampleService: SampleService,
@@ -33,29 +33,32 @@ export class SampledataComponent implements OnInit {
     // private 
   ) { }
 
-  public getSampleData(): void{
-    let samples=new ObservableArray();
+  public getSampleData(): void {
+    let samples = new ObservableArray();
     this.sampleService.getSampleData();
-    this.sampleSub=this.sampleService.sampledataObservable.subscribe(
+    this.sampleSub = this.sampleService.sampledataObservable.subscribe(
       data => {
-        if (data.length >0 ){
-          this.fgdSampleData=data;
-          this.fgdSampleCollection=new CollectionView(this.fgdSampleData);
-          this.fgdSampleCollection.pageSize=15;
-          this.fgdSampleCollection.trackChanges=true;
+        if (data.length > 0) {
+          this.fgdSampleData = data;
+          this.fgdSampleCollection = new CollectionView(this.fgdSampleData);
+          this.fgdSampleCollection.pageSize = 15;
+          this.fgdSampleCollection.trackChanges = true;
         }
-      } 
+      }
     );
   }
+  // public cmdSecondPage():void{
+  //   this.router.navigate(['/Page2']);
+  // }
 
   ngOnInit() {
-    this.fgdSampleData=new ObservableArray();
-    this.fgdSampleCollection=new CollectionView(this.fgdSampleData);
+    this.fgdSampleData = new ObservableArray();
+    this.fgdSampleCollection = new CollectionView(this.fgdSampleData);
 
     this.getSampleData();
   }
-  ngOnDestroy(){
-    if(this.sampleSub !=null ) this.sampleSub.unsubscribe();
+  ngOnDestroy() {
+    if (this.sampleSub != null) this.sampleSub.unsubscribe();
   }
 
 }

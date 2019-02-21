@@ -15,17 +15,17 @@ export class EmployeeDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private employeeServie: EmployeeService
+    private employeeService: EmployeeService
   ) { }
 
   public getEmployeeDetail(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.employeeServie.detailEmployee(id).subscribe(employee => this.employee = employee);
+    this.employeeService.detailEmployee(id).subscribe(employee => this.employee = employee);
   }
 
   public btnUpdateEmployee(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    if (this.employeeServie.updateEmployee(id, this.employee) == 1) {
+    if (this.employeeService.updateEmployee(id, this.employee) == 1) {
       this.router.navigate(['/employee']);
     };
   }

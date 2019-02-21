@@ -8,12 +8,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SampledataComponent } from './sampledata/sampledata.component';
 import { SampleData } from './sampledata/samplemodel';
 import { SampleService } from './sample.service';
+import { Page2Component } from './page2/page2.component';
 
 const routes: Routes = [
   { path: 'dashboard', component:  DashboardComponent},
   { path: 'employee', component: EmployeeComponent },
   { path: 'employee/detail/:id', component: EmployeeDetailComponent }, 
-  { path: 'sampledata', component : SampledataComponent }
+  { path: 'sampledata', component : SampledataComponent },
+  { path: 'Page2', component: Page2Component}
 ];
 
 @NgModule({
